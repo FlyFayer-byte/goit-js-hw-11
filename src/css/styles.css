@@ -1,6 +1,7 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
+@import url('loaders.css/loaders.min.css');
 
 :root{
   --c-text:#2E2F42;
@@ -133,4 +134,16 @@ img { display:block; max-width:100%; height:auto; }
   display:inline-block;
   animation:rotation 1s linear infinite;
 }
+
+/* показ/приховування бекдропа вже є через .is-visible */
+
+/* Зробимо лоадер більшим і в акцентному кольорі */
+.loader-inner.ball-clip-rotate > div{
+  width: 48px;
+  height: 48px;
+  border-width: 4px;
+  /* колір кільця: колір – прозорий – колір – прозорий */
+  border-color: var(--c-accent) transparent var(--c-accent) transparent;
+}
+
 @keyframes rotation{ 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
